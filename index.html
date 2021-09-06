@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body data-scroll>
+    <header id="header">
+        <a href="#" class="logo">Jungle</a>
+        <a href="#" class="nav-switch"><i class="fas fa-bars"></i></a>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#text-containter" data-scroll>Timeline</a></li>
+            <li><a href="#">Destination</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <h2 id="text"><span>It's time for a new</span><br>Adventre</h2>
+        <img src="assets/bird1.png" id="bird1">
+        <img src="assets/bird2.png" id="bird2">
+        <img src="assets/forest.png" id="forest">
+
+        <a href="#text-containter" data-scroll id="btn">Explore</a>
+
+        <img src="assets/rocks.png" id="rocks">
+        <img src="assets/water.png" id="water">
+    </section>
+
+    <div class="sec" id="text-containter">
+        <h2>Timeline</h2>
+        <div class="tabs-timeline">
+            <div class="tab-header">
+                <div class="active">Hari 1</div>
+                <div>Hari 2</div>
+                <div>Hari 3</div>
+                <div>Hari 4</div>
+                <div>Hari 5</div>
+                <div>Hari 6</div>
+                <div>Hari 7</div>
+            </div>
+
+            <div class="tab-content">
+                <div class="active">
+                    <h3>Hari 1</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias! consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias!</p>
+                </div>
+                <div>
+                    <h3>Hari 2</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias!</p>
+                </div>
+                <div>
+                    <h3>Hari 3</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias!</p>
+                </div>
+                <div>
+                    <h3>Hari 4</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias!</p>
+                </div>
+                <div>
+                    <h3>Hari 5</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias!</p>
+                </div>
+                <div>
+                    <h3>Hari 6</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias!</p>
+                </div>
+                <div>
+                    <h3>Hari 7</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet neque placeat quidem velit, dolorum tempora aut. Quae, inventore eum, quasi facilis aliquid officia nemo corporis, commodi omnis necessitatibus eos molestias!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="sec bottom">
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0/dist/smooth-scroll.polyfills.min.js"></script>
+    <script>
+        let text = document.getElementById('text');
+        let bird1 = document.getElementById('bird1');
+        let bird2 = document.getElementById('bird2');
+        let btn = document.getElementById('btn');
+        let rocks = document.getElementById('rocks');
+        let forest = document.getElementById('forest');
+        let water = document.getElementById('water');
+        // let header = document.getElementById('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+
+            text.style.top = 30 + value * -0.5 + '%';
+            bird1.style.top = value * -1.5 + 'px';
+            bird1.style.left = value * 2 + 'px';
+            bird2.style.top = value * -1.5 + 'px';
+            bird2.style.left = value * -5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            rocks.style.top = value * -0.12 + 'px';
+            forest.style.top = value * 0.25 + 'px';
+            // header.style.top = value * 0.5 + 'px';
+        });
+
+        var scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 800,
+            speedAsDuration: true,
+            easing: 'easeInCubic',
+        });
+
+        $(document).ready(function(){
+            $('.nav-switch').click(function(){
+                $(this).toggleClass('nav-active');
+                $('#header ul').toggleClass('open');
+                if($(this).hasClass('nav-active')){
+                    $('body').css('overflow-y', 'hidden');
+                } else {
+                    $('body').css('overflow-y', 'scroll');
+                }
+            })
+
+            $('#header ul li a').click(function(){
+                $('.nav-switch').removeClass('nav-active');
+                $('#header ul').removeClass('open');
+                $('body').css('overflow-y', 'scroll');
+            });
+
+            $('.tab-header div').click(function(){
+                $('.tab-header div').each(function(){
+                    $(this).removeClass('active');
+                });
+                $(this).addClass('active');
+                
+                $('.tab-content div').each(function(){
+                    $(this).removeClass('active');
+                });
+                $('.tab-content div').eq($(this).index()).addClass('active');
+                console.log($(this).index());
+            })
+        });
+    </script>
+</body>
+</html>

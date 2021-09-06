@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&family=Rancho&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+#header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 999;
+}
+
+#header .logo{
+    color: #094b65;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+#header .nav-switch{
+    color: #094b65;
+    display: none;
+    align-items: center;
+    text-decoration: none;
+    z-index: 9999;
+}
+
+#header ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+#header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #094b65;
+    border-radius: 20px;
+}
+
+#header ul li a:hover,
+#header ul li a.active{
+    color: #fff;
+    background-color: #094b65;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #094b65, transparent);
+    z-index: 10;
+}
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section #text{
+    position: absolute;
+    color: #094b65;
+    font-size: 10vw;
+    text-align: center;
+    line-height: 0.55em;
+    font-family: 'Rancho', cursive;
+    transform: translateY(-50px);
+}
+
+section #text span{
+    font-size: 0.20em;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    background-color: #fb0;
+    color: #094b65;
+    font-size: 1.2em;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 40px;
+    transform: translateY(100px);
+}
+
+.sec{
+    position: relative;
+    padding: 100px;
+    background-color: #094b65;
+}
+
+.sec h2{
+    font-size: 3.5em;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.sec p{
+    font-size: 1em;
+    color: #fff;
+}
+
+.tabs-timeline{
+    display: flex;
+    justify-content: left;
+    flex-direction: row;
+    align-items: stretch;
+    height: 600px;
+    padding: 30px 0px;
+}
+
+.tabs-timeline .tab-header{
+    height: fit-content;
+    padding: 16px;
+    border-right: 1px solid #ccc;
+}
+
+.tabs-timeline .tab-header > div{
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    padding-left: 8px;
+}
+
+.tabs-timeline .tab-header > div:hover,
+.tabs-timeline .tab-header > div.active{
+    color: #00acee;
+}
+
+.tabs-timeline .tab-content {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.tabs-timeline .tab-content > div{
+    position: absolute;
+    color: #fff;
+    padding: 20px;
+    display: none;
+    transition: all 500ms ease-in-out;
+}
+
+.tabs-timeline .tab-content > div.active{
+    display: block;
+}
+
+@media only screen and (max-width: 530px) {
+    #header{
+        padding: 0px;
+    }
+
+    #header .nav-switch{
+        display: flex;
+        position: relative;
+        z-index: 9999;
+    }
+
+    #header .nav-switch.nav-active{
+        color: #fff;
+    }
+
+    #header a{
+        padding: 12px 16px;
+    }
+
+    #header ul{
+        position: fixed;
+        background-color: #094b65;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(100px at 100% -15%);
+        -webkit-clip-path: circle(100px at 100% -15%);
+        transition: all 1 ease-out;
+        pointer-events: none;
+    }
+
+    #header ul.open{
+        clip-path: circle(10000px at 100% -15%);
+        -webkit-clip-path: circle(10000px at 100% -15%);
+        pointer-events: all;
+    }
+
+    #header ul li a{
+        color: white;
+    }
+
+    section #text{
+        font-size: 20vw;
+    }
+    
+    section #text span{
+        font-size: 0.20em;
+    }
+
+    .sec{
+        padding: 16px;
+    }
+
+    .sec h2{
+        font-size: 2em;
+    }
+
+    .tabs-timeline{
+        display: flex;
+        justify-content: left;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 30px 0px;
+    }
+
+    .tabs-timeline .tab-header{
+        height: fit-content;
+        padding: 16px;
+        border-right: 0px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .tabs-timeline .tab-header > div{
+        display: inline;
+        font-size: 16px;
+        color: #fff;
+        cursor: pointer;
+        padding-left: 8px;
+    }
+}
