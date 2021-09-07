@@ -7,8 +7,12 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+html, body{
     overflow-x: hidden;
+}
+
+body{
+    position: relative;
     background-color: #fff;
     min-height: 100vh;
 }
