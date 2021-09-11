@@ -56,7 +56,7 @@ class BaseController extends Controller
         $this->client = new \Google\Client();
         $this->client->setClientId('4936118433-513l1h01v54e1req6q8o9m72htl6orod.apps.googleusercontent.com');
         $this->client->setClientSecret('1QeKc89noDJajxNYXssl1L0o');
-        $this->client->setRedirectUri('http://localhost:8080/oauth2callback');
+        $this->client->setRedirectUri(base_url('oauth2callback'));
         $this->client->addScope("https://www.googleapis.com/auth/drive");
         $this->service = new \Google\Service\Drive($this->client);
     }

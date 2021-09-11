@@ -12,38 +12,64 @@
             margin: 0;
             padding: 0;
         }
+        
+        #header{
+            background-color: #112433;
+            z-index: 9999;
+        }
+
+        .nav .nav-item .nav-link{
+            margin-left: 12px;
+            border-radius: 16px;
+            color: #f8fdf9;
+        }
+
+        .nav .nav-item .nav-link:hover{
+            color: #064e6e;
+            background-color: #f8fdf9;
+        }
 
         .form-container{
-            background-color: #094b65;
+            background-color: #112433;
             min-height: 100vh;
         }
 
-        h3{
+        .form-container h3{
             color: #fff;
         }
 
-        .form-gform{
-            width: 640px;
-            height: 409px;
+        label{
+            color: #ffa;
         }
-
+        
         @media only screen and (max-width: 530px) {
             .form-gform{
                 width: 300px;
                 height: 419px;
             }   
         }
-
-        div{
-            color: #fff;
-        }
     </style>
 </head>
 <body>
+    <div class="container-liquid">
+        <div class="d-flex justify-content-center align-items-center px-2 px-sm-5 py-2" id="header">
+            <div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <div class="container-fluid form-container">
         <div class="row py-5">
             <div class="col-md-6 mx-auto">
-                <h3>Formulir buatan</h3>
+                <h3>Formulir Penugasan</h3>
                 <?= form_open_multipart(base_url('/upload'), ['method' => 'post']); ?>
                     <div class="mb-3">
                         <label class="form-label">Nama Lengkap</label>
@@ -54,13 +80,18 @@
                         <input class="form-control" type="text" placeholder="Kuli" name="kelompok" required/>
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">Url dokumen</label>
+                        <input class="form-control" type="text" placeholder="http://url" name="dokumen" required/>
+                    </div>
+                    <!-- <div class="mb-3">
                         <label class="form-label">Upload Penugasan</label>
                         <div class="input-group mb-3">
                             <input class="form-control" type="file" id="formFile" name="fileToUpload" />
                         </div>
-                    </div>
+                    </div> -->
                     <button class="btn btn-primary" type="submit" id="submit-btn">Submit</button>
                 </form>
+
             </div>
         </div>
     </div>
