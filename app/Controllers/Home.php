@@ -10,9 +10,9 @@ class Home extends BaseController
 
     public function form_penugasan()
     {
-        if(! session()->has('upload_token')){
-            return redirect()->to($this->client->createAuthUrl());
-        }
+        // if(! session()->has('upload_token')){
+        //     return redirect()->to($this->client->createAuthUrl());
+        // }
         return view('form');
     }
 
