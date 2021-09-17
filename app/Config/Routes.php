@@ -19,7 +19,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
-$routes->setTranslateURIDashes(false);
+$routes->setTranslateURIDashes(true);
 $routes->set404Override();
 $routes->setAutoRoute(true);
 
@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('/formulir-penugasan', 'Home::form_penugasan');
+$routes->get('/mini-quiz', 'Home::mini_quiz');
 $routes->get('/oauth2callback', 'Home::oauth2callback');
 $routes->post('/upload', 'Home::upload');
 

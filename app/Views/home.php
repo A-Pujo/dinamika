@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dinamika</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -21,7 +21,13 @@
             overflow-x: hidden;
         }
 
+        .root-wrapper{
+            overflow-x: hidden;
+            position: relative;
+        }
+
         .hello-container{
+            position: relative;
             height: 100vh;
             background-color: #04afda;
         }
@@ -30,15 +36,24 @@
             z-index: 9999;
         }
 
-        .nav .nav-item .nav-link{
-            margin-left: 12px;
+        .linkys{
             border-radius: 16px;
-            color: #f8fdf9;
+            background-color: #f8fdf9;
+            width: 128px;
+            text-align: center;
         }
 
-        .nav .nav-item .nav-link:hover{
+        .linkys a{
+            text-decoration: none;
             color: #064e6e;
-            background-color: #f8fdf9;
+        }
+
+        .linkys:hover{
+            background-color: #064e6e;
+        }
+        
+        .linkys:hover a{
+            color: #f8fdf9;
         }
 
         #scene{
@@ -73,6 +88,10 @@
             position: absolute;
             top: 0;
             left: 0;
+        }
+
+        #logo-dmk{
+            filter: drop-shadow(10px 10px 4px #112433);
         }
 
         #text-dmk{
@@ -127,58 +146,28 @@
             width: 160px;
         }
 
-        #bulu{
-            top: 88px;
-            left: 420px;
-        }
-
-        #bidak{
-            bottom: 80px;
-            left: 720px;
-        }
-
-        #motif{
-            top: 200px;
-            right: 314px;
-        }
-
-        #pala{
-            bottom: 188px;
-            left: 248px;
-        }
-
-        #sirip{
-            bottom: 164px;
-            right: 380px;
-        }
-
-        #tanduk{
-            top: 80px;
-            right: 472px;
-        }
-
         #borneo{
-            bottom: 80px;
+            bottom: 256px;
             left: 0;
         }
 
         #celebes{
-            bottom: 80px;
+            bottom: 256px;
             left: 25vw;
         }
 
         #irian{
-            bottom: 80px;
+            bottom: 256px;
             left: 45vw;
         }
 
         #java{
-            bottom: 80px;
+            bottom: 256px;
             right: 25vw;
         }
 
         #swarna{
-            bottom: 80px;
+            bottom: 256px;
             right: 0;
         }
         
@@ -228,10 +217,6 @@
             color: #fff;
         }
 
-        .modal-header{
-            
-        }
-
         .modal-body{
             background-image: url("<?= base_url('assets/images/modal-bg.png') ?>");
             background-size: cover;
@@ -251,8 +236,30 @@
             color: #fff;
         }
 
+        .footer{
+            background-color: #04AFDA;
+        }
+
+        .footer div div a{
+            text-decoration: none;
+            color: #FFFFAA;
+        }
+
         @media only screen and (max-width: 600px) {
             /* style for mobile */
+            *{
+                overflow-x: hidden;
+            }
+            
+            #scene{
+                left: -5%;
+                width: 115%;
+            }
+
+            #text-dmk a{
+                background-color: #fdcb74;
+            }
+
             .pecahan-logo img{
                 display: none;
                 position: absolute;
@@ -264,6 +271,7 @@
                 top: 1em;
                 left: -100vw;
                 width: 160px;
+                z-index: 999;
             }
 
             #awan-2{
@@ -271,6 +279,7 @@
                 top: 13em;
                 left: -110vw;
                 width: 160px;
+                z-index: 999;
             }
 
             .space-helper{
@@ -280,77 +289,105 @@
             #text-map{
                 margin-top: -40px;
             }
+
+            .social-text{
+                display: none;
+            }
         } 
 
     </style>
 </head>
 <body>
-    <div class="hello-container">
-        <div class="container-liquid">
-            <div id="scene">
-                <div class="layer" id="wave" data-depth-x="0.3"><img src="<?= base_url('assets/images/wave(1).png') ?>" /></div>
-                <div class="layer" id="bush-1" data-depth-x="0.3"><img src="<?= base_url('assets/images/bush-1.png') ?>" /></div>
-                <div class="layer" id="bush-2" data-depth-x="0.2"><img src="<?= base_url('assets/images/bush-2.png') ?>" /></div>
-                <div class="layer" id="left-tree" data-depth-x="0.1"><img src="<?= base_url('assets/images/left-tree.png') ?>" /></div>
-                <div class="layer" id="right-tree" data-depth-x="0.1"><img src="<?= base_url('assets/images/right-tree.png') ?>" /></div>
-                <div class="layer" id="bush-3" data-depth-x="0.2"><img src="<?= base_url('assets/images/bush-3.png') ?>" /></div>
-                <div class="layer d-flex justify-content-center align-items-center" id="logo-dmk" data-depth="0.55"><img src="<?= base_url('assets/images/LogoDinamika.png') ?>" style="width: 200px; height: auto;" /></div>
-                <div class="layer d-flex justify-content-center align-items-center" id="text-dmk" data-depth="0.55"><a data-scroll href="#welcome-container" class="text-center btn">Mulai Eksplorasi!</a></div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center px-2 px-sm-5 py-2" id="header">
-                <div>
-                    <ul class="nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="<?= base_url('formulir-penugasan') ?>">Penugasan</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                    </ul>
+    <div class="root-wrapper">
+
+        <div class="hello-container">
+            <div class="container-liquid">
+                <div id="scene">
+                    <div class="layer" id="wave" data-depth-x="0.3"><img src="<?= base_url('assets/images/wave(1).png') ?>" /></div>
+                    <div class="layer" id="bush-1" data-depth-x="0.3"><img src="<?= base_url('assets/images/bush-1.png') ?>" /></div>
+                    <div class="layer" id="bush-2" data-depth-x="0.2"><img src="<?= base_url('assets/images/bush-2.png') ?>" /></div>
+                    <div class="layer" id="left-tree" data-depth-x="0.1"><img src="<?= base_url('assets/images/left-tree.png') ?>" /></div>
+                    <div class="layer" id="right-tree" data-depth-x="0.1"><img src="<?= base_url('assets/images/right-tree.png') ?>" /></div>
+                    <div class="layer" id="bush-3" data-depth-x="0.2"><img src="<?= base_url('assets/images/bush-3.png') ?>" /></div>
+                    <div class="layer d-flex justify-content-center align-items-center" id="logo-dmk" data-depth="0.55"><img src="<?= base_url('assets/images/LogoDinamika.png') ?>" style="width: 200px; height: auto;" /></div>
+                    <div class="layer d-flex justify-content-center align-items-center" id="text-dmk" data-depth="0.55"><a data-scroll href="#welcome-container" class="text-center btn">Mulai Eksplorasi!</a></div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="welcome-container" class="container-fluid content">
-        <div class="py-5 px-1 px-md-3 welcoming-text d-flex flex-column justify-content-center align-items-center">
-            <h1 class="text-center">Selamat Datang Generasi Kesatria!</h1>
-            <h3 class="text-center">Integrasi Pemimpin Bertalenta, Bangkitkan Indonesia.</h3>
+    
+        <div id="welcome-container" class="container-fluid content">
+            <div class="py-5 px-1 px-md-3 welcoming-text d-flex flex-column">
+                <h1 class="text-center">Selamat Datang Generasi Kesatria!</h1>
+                <h3 class="text-center">Integrasi Pemimpin Bertalenta, Bangkitkan Indonesia.</h3>
+                <div class="row mx-auto px-2 px-sm-5 py-2 text-center" id="header">
+                    <?php if(session()->has('no_reg')) : ?>
+                    <div class="col-sm-6 p-2 text-center">
+                        <div class="mx-auto linkys p-2">
+                            <a href="<?= base_url('portal') ?>">Portal</a>
+                        </div>
+                    </div>
+                    <?php endif; ?>
+                    <div class="col-sm-6 p-2 text-center">
+                        <div class="mx-auto linkys p-2">
+                            <?php if(session()->has('no_reg')) : ?>
+                                <a href="<?= base_url('akun/logout') ?>">Keluar</a>
+                            <?php else : ?>
+                                <a href="<?= base_url('akun/login') ?>">Masuk</a>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pecahan-logo">
+                <img id="borneo" src="<?= base_url('assets/images/Borneo.png') ?>" data-aos="zoom-in-down" data-aos-duration="1200" />
+                <img id="celebes" src="<?= base_url('assets/images/Celebes.png') ?>" data-aos="fade-down-left" data-aos-duration="1200" />
+                <img id="irian" src="<?= base_url('assets/images/Irian.png') ?>" data-aos="fade-down" data-aos-duration="1200" />
+                <img id="java" src="<?= base_url('assets/images/Java.png') ?>" data-aos="fade-down-right" data-aos-duration="1200" />
+                <img id="swarna" src="<?= base_url('assets/images/Swarna.png') ?>" data-aos="zoom-in-down" data-aos-duration="1200" />
+            </div>
         </div>
-        <div class="pecahan-logo">
-            <!-- <img id="bulu" src="<?= base_url('assets/images/bulu-burung.png') ?>" data-aos="zoom-out-right" data-aos-duration="1000" />
-            <img id="bidak" src="<?= base_url('assets/images/bidak-catur.png') ?>" data-aos="fade-in" data-aos-duration="1000" />
-            <img id="motif" src="<?= base_url('assets/images/motif-macan.png') ?>" data-aos="zoom-in-down" data-aos-duration="1000" />
-            <img id="pala" src="<?= base_url('assets/images/pala-badak.png') ?>" data-aos="flip-right" data-aos-duration="1000" />
-            <img id="sirip" src="<?= base_url('assets/images/sirip-pesut.png') ?>" data-aos="fade-down-right" data-aos-duration="1000" />
-            <img id="tanduk" src="<?= base_url('assets/images/tanduk-anoa.png') ?>" data-aos="flip-up" data-aos-duration="1000" /> -->
-            <img id="borneo" src="<?= base_url('assets/images/Borneo.png') ?>" data-aos="zoom-in-down" data-aos-duration="1200" />
-            <img id="celebes" src="<?= base_url('assets/images/Celebes.png') ?>" data-aos="fade-down-left" data-aos-duration="1200" />
-            <img id="irian" src="<?= base_url('assets/images/Irian.png') ?>" data-aos="fade-down" data-aos-duration="1200" />
-            <img id="java" src="<?= base_url('assets/images/Java.png') ?>" data-aos="fade-down-right" data-aos-duration="1200" />
-            <img id="swarna" src="<?= base_url('assets/images/Swarna.png') ?>" data-aos="zoom-in-down" data-aos-duration="1200" />
-        </div>
-    </div>
-
-    <div id="map-container" class="content">
-        <svg id="divider" class="w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#921144" fill-opacity="1" d="M0,32L40,69.3C80,107,160,181,240,186.7C320,192,400,128,480,133.3C560,139,640,213,720,234.7C800,256,880,224,960,224C1040,224,1120,256,1200,224C1280,192,1360,96,1400,48L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-        <div class="awan-parallax">
-            <img id="awan-1" src="<?= base_url('assets/images/awan.png') ?>">
-            <img id="awan-2" src="<?= base_url('assets/images/awan.png') ?>">
-        </div>
-        <div class="space-helper"></div>
-        <div class="py-5 px-3 d-flex flex-column justify-content-center align-items-center">
-            <!-- Image Map Generated by http://www.image-map.net/ -->
-            <img id="map" src="<?= base_url('assets/images/map.png') ?>" class="w-50" usemap="#image-map">
-            <h5 id="text-map" class="p-3 text-center">Peta Petualangan!</h5>
-            <map name="image-map">
-                <area target="" alt="" title="" href="" coords="215,210,36" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
-                <area target="" alt="" title="" href="" coords="528,88,33" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
-                <area target="" alt="" title="" href="" coords="394,702,34" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
-                <area target="" alt="" title="" href="" coords="741,475,36" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
-            </map>
+    
+        <div id="map-container" class="content">
+            <svg id="divider" class="w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#921144" fill-opacity="1" d="M0,32L40,69.3C80,107,160,181,240,186.7C320,192,400,128,480,133.3C560,139,640,213,720,234.7C800,256,880,224,960,224C1040,224,1120,256,1200,224C1280,192,1360,96,1400,48L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
+            <div class="awan-parallax">
+                <img id="awan-1" src="<?= base_url('assets/images/awan.png') ?>">
+                <img id="awan-2" src="<?= base_url('assets/images/awan.png') ?>">
+            </div>
+            <div class="space-helper"></div>
+            <!-- <div class="py-5 px-3 d-flex flex-column justify-content-center align-items-center">
+                <img id="map" src="<?= base_url('assets/images/map.png') ?>" class="w-50" usemap="#image-map">
+                <h5 id="text-map" class="p-3 text-center">Peta Petualangan!</h5>
+                <map name="image-map">
+                    <area target="" alt="" title="" href="" coords="215,210,36" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
+                    <area target="" alt="" title="" href="" coords="528,88,33" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
+                    <area target="" alt="" title="" href="" coords="394,702,34" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
+                    <area target="" alt="" title="" href="" coords="741,475,36" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
+                </map>
+            </div>   -->
         </div>
         
+
+        <div class="row footer">
+            <div class="col-lg-12">
+                <div class="d-flex justify-content-around align-items-center py-2">
+                    <a href="btn btn-link"><i class="fab fa-instagram"></i> <span class="social-text">@dinamikapknstan</span></a>
+                    <a href="btn btn-link"><i class="fab fa-twitter"></i> <span class="social-text">@dinamikapknstan</span></a>
+                    <a href="btn btn-link"><i class="fab fa-tiktok"></i> <span class="social-text">@dinamikapknstan</span></a>
+                    <a href="btn btn-link"><i class="fab fa-telegram-plane"></i> <span class="social-text">dinamika_pknstan⁣⁣⁣</span></a>
+                    <a href="btn btn-link"><i class="fab fa-youtube"></i> <span class="social-text">DINAMIKA PKN STAN⁣⁣⁣</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row footer">
+            <div class="col-lg-12">
+                <div class="d-flex justify-content-center align-items-center pb-2">
+                    <small style="color: #FFFFAA">
+                        Dinamika x Staner.id 2021
+                    </small>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Modal -->
@@ -358,7 +395,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Checkpoint #1</h5>
+                    <h5 class="modal-title">Checkpoint #1</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">

@@ -50,14 +50,7 @@ class BaseController extends Controller
         // E.g.: $this->session = \Config\Services::session();
 
         session();
-        helper(['form']);
-
-        require APPPATH . '../vendor/autoload.php';
-        $this->client = new \Google\Client();
-        $this->client->setClientId('4936118433-513l1h01v54e1req6q8o9m72htl6orod.apps.googleusercontent.com');
-        $this->client->setClientSecret('1QeKc89noDJajxNYXssl1L0o');
-        $this->client->setRedirectUri(base_url('oauth2callback'));
-        $this->client->addScope("https://www.googleapis.com/auth/drive");
-        $this->service = new \Google\Service\Drive($this->client);
+        helper(['form', 'akun']);
+        session()->set('previous_url', previous_url());
     }
 }
