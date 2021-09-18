@@ -1,4 +1,4 @@
-    <?= view('__portal-header') ?>
+<?= view('__portal-header') ?>
         <!-- Begin Page Content -->
                 <div class="container-fluid">
                     
@@ -55,7 +55,7 @@
                                                 <textarea class="form-control" name="resume" rows="3" minlength="100" required></textarea>
                                             </div>
                                             <?php if(date('Y-m-d H:i:s') < $acara->selesai_acara) : ?>
-                                                <button class="btn btn-success" type="submit"><i class="fas fa-file-signature"></i> Hadir</button>
+                                            <button class="btn btn-success" type="submit"><i class="fas fa-file-signature"></i> Hadir</button>
                                             <?php endif; ?>
                                         </form>
                                     <?php endif; ?>

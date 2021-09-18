@@ -28,6 +28,7 @@ class Portal extends BaseController
                 'acara' => $this->db->table('daftar_acara')->get()->getResult(),
                 'presensi' => $this->db->table('data_presensi')->join('daftar_acara', 'daftar_acara.id_acara=data_presensi.id_acara')->getWhere(['no_reg_maba' => user()->no_reg])->getResult(),
             ];
+            
             return view('portal-acara', $data);
         } else {
             $data = [
@@ -36,7 +37,7 @@ class Portal extends BaseController
                 'kehadiran' => $this->db->table('data_presensi')->where(['no_reg_maba' => user()->no_reg, 'id_acara' => $id])->get()->getResultArray(),
             ];
 
-            if(empty($data['acara'])){
+            if(empty($data['acara']) and empty($data['room'])){
                 return redirect()->to(base_url('portal/acara'));
             }
             // dd($data);
