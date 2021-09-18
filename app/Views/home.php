@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dinamika</title>
+    <title>Dinamika 2021</title>
+    <link rel="icon" href="<?= base_url('assets/images/LogoDinamika.ico') ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;400;500;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+        @import url('http://fonts.cdnfonts.com/css/christopher-done');
 
         *{
             margin: 0;
@@ -109,12 +111,13 @@
         }
 
         .welcoming-text{
-            min-height: 100vh;
+            /* min-height: 100vh; */
+            transform: translateY(48px);
         }
 
         .welcoming-text h1{
             color: #ffa;
-            font-family: 'Lilita One', cursive;
+            font-family: 'Christopher Done', sans-serif;
             font-size: 3em;
             z-index: 99;
         }
@@ -125,8 +128,9 @@
         }
 
         #welcome-container{
-            background: rgb(223,88,103);
-            background: linear-gradient(180deg, rgba(223,88,103,1) 0%, rgba(146,17,68,1) 90%);
+            background-color: #DF5867;
+            /* background: rgb(223,88,103); */
+            /* background: linear-gradient(180deg, rgba(223,88,103,1) 0%, rgba(146,17,68,1) 90%); */
             overflow: hidden;
         }
 
@@ -176,7 +180,7 @@
             position: relative;
             background-color: #a8d9b5;
             overflow: hidden;
-            background-image: url("<?= base_url('assets/images/Element.png') ?>");
+            /* background-image: url("<?= base_url('assets/images/element.jpg') ?>"); */
             background-size: 50vw auto;
         }
 
@@ -206,7 +210,7 @@
         }
 
         .space-helper{
-            height: 256px;
+            height: 416px;
         }
 
         #text-map{
@@ -223,10 +227,10 @@
         }
 
         .glass-container{
-            background: rgba( 255, 255, 255, 0.3 );
-            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-            backdrop-filter: blur( 6px );
-            -webkit-backdrop-filter: blur( 6px );
+            background: rgba( 255, 255, 255, 0.70 );
+            box-shadow: 0 8px 32px 0 rgba( 30, 30, 30, 0.37 );
+            backdrop-filter: blur( 8px );
+            -webkit-backdrop-filter: blur( 12px );
             border-radius: 10px;
             border: 1px solid rgba( 255, 255, 255, 0.18 );
         }
@@ -243,6 +247,19 @@
         .footer div div a{
             text-decoration: none;
             color: #FFFFAA;
+        }
+
+        .container-info{
+            z-index: 9999;
+        }
+
+        .h_iframe iframe {
+            width:100%;
+            height:100%;
+        }
+        .h_iframe {
+            height: 100%;
+            width:100%;
         }
 
         @media only screen and (max-width: 600px) {
@@ -283,7 +300,7 @@
             }
 
             .space-helper{
-                height: 32px;
+                height: 40px;
             }
 
             #text-map{
@@ -292,6 +309,11 @@
 
             .social-text{
                 display: none;
+            }
+
+            .welcoming-text{
+                /* min-height: 100vh; */
+                transform: translateY(0px);
             }
         } 
 
@@ -338,22 +360,120 @@
                     </div>
                 </div>
             </div>
-            <div class="pecahan-logo">
+            <!-- <div class="pecahan-logo">
                 <img id="borneo" src="<?= base_url('assets/images/Borneo.png') ?>" data-aos="zoom-in-down" data-aos-duration="1200" />
                 <img id="celebes" src="<?= base_url('assets/images/Celebes.png') ?>" data-aos="fade-down-left" data-aos-duration="1200" />
                 <img id="irian" src="<?= base_url('assets/images/Irian.png') ?>" data-aos="fade-down" data-aos-duration="1200" />
                 <img id="java" src="<?= base_url('assets/images/Java.png') ?>" data-aos="fade-down-right" data-aos-duration="1200" />
                 <img id="swarna" src="<?= base_url('assets/images/Swarna.png') ?>" data-aos="zoom-in-down" data-aos-duration="1200" />
-            </div>
+            </div> -->
         </div>
     
         <div id="map-container" class="content">
-            <svg id="divider" class="w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#921144" fill-opacity="1" d="M0,32L40,69.3C80,107,160,181,240,186.7C320,192,400,128,480,133.3C560,139,640,213,720,234.7C800,256,880,224,960,224C1040,224,1120,256,1200,224C1280,192,1360,96,1400,48L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg>
-            <div class="awan-parallax">
+            <!-- <svg id="divider" class="w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#921144" fill-opacity="1" d="M0,32L40,69.3C80,107,160,181,240,186.7C320,192,400,128,480,133.3C560,139,640,213,720,234.7C800,256,880,224,960,224C1040,224,1120,256,1200,224C1280,192,1360,96,1400,48L1440,0L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path></svg> -->
+            <img id="divider" class="w-100" src="<?= base_url('assets/images/wave(5).png') ?>">
+            <!-- <div class="awan-parallax">
                 <img id="awan-1" src="<?= base_url('assets/images/awan.png') ?>">
                 <img id="awan-2" src="<?= base_url('assets/images/awan.png') ?>">
-            </div>
+            </div> -->
             <div class="space-helper"></div>
+            <div class="container mt-5">
+                <div class="w-100 p-3">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div class="card shadow">
+                                <a class="text-black-50" href="<?= base_url('uploads/file/text.pdf') ?>" style="text-decoration: none;" download>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <img class="w-100" src="https://opendoodles.s3-us-west-1.amazonaws.com/reading.png">
+                                            <div class="w-100 text-center"><small>Handbook Dinamika</small></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card shadow">
+                                <a class="text-black-50" href="<?= base_url('uploads/file/text.pdf') ?>" style="text-decoration: none;" download>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <img class="w-100" src="https://opendoodles.s3-us-west-1.amazonaws.com/roller-skating.png">
+                                            <div class="w-100 text-center"><small>Handbook Dinamika</small></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card shadow">
+                                <a class="text-black-50" href="<?= base_url('uploads/file/text.pdf') ?>" style="text-decoration: none;" download>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <img class="w-100" src="https://opendoodles.s3-us-west-1.amazonaws.com/reading-side.png">
+                                            <div class="w-100 text-center"><small>Handbook Dinamika</small></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="card shadow">
+                                <a class="text-black-50" href="<?= base_url('uploads/file/text.pdf') ?>" style="text-decoration: none;" download>
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <img class="w-100" src="https://opendoodles.s3-us-west-1.amazonaws.com/sleek.png">
+                                            <div class="w-100 text-center"><small>Handbook Dinamika</small></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mt-5">
+                    <h4 class="text-center text-black-50">Pengenalan Kampus</h4>
+                    <div class="row mt-5">
+                        <div class="col-lg-4">
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    Kampus Baru
+                                </div>
+                                <div class="card-body" style="height: 360px;">
+                                    <div class="h_iframe">
+                                        <iframe src="https://www.youtube.com/embed/gTblDEnT3bM"></iframe> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    Kampus Baru
+                                </div>
+                                <div class="card-body" style="height: 360px;">
+                                    <div class="h_iframe">
+                                        <iframe src="https://www.youtube.com/embed/gTblDEnT3bM"></iframe> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card shadow">
+                                <div class="card-header">
+                                    Kampus Baru
+                                </div>
+                                <div class="card-body" style="height: 360px;">
+                                    <div class="h_iframe">
+                                        <iframe src="https://www.youtube.com/embed/gTblDEnT3bM"></iframe> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- <div class="py-5 px-3 d-flex flex-column justify-content-center align-items-center">
                 <img id="map" src="<?= base_url('assets/images/map.png') ?>" class="w-50" usemap="#image-map">
                 <h5 id="text-map" class="p-3 text-center">Peta Petualangan!</h5>
@@ -364,47 +484,30 @@
                     <area target="" alt="" title="" href="" coords="741,475,36" shape="circle" data-bs-toggle="modal" data-bs-target="#modal">
                 </map>
             </div>   -->
+            <svg class="w-100" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" style="filter: drop-shadow(0px -10px 8px #54544f);">
+                <path fill="#04AFDA" fill-opacity="1" d="M0,224L120,229.3C240,235,480,245,720,240C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+            </svg>
         </div>
         
 
         <div class="row footer">
             <div class="col-lg-12">
                 <div class="d-flex justify-content-around align-items-center py-2">
-                    <a href="btn btn-link"><i class="fab fa-instagram"></i> <span class="social-text">@dinamikapknstan</span></a>
-                    <a href="btn btn-link"><i class="fab fa-twitter"></i> <span class="social-text">@dinamikapknstan</span></a>
-                    <a href="btn btn-link"><i class="fab fa-tiktok"></i> <span class="social-text">@dinamikapknstan</span></a>
-                    <a href="btn btn-link"><i class="fab fa-telegram-plane"></i> <span class="social-text">dinamika_pknstan⁣⁣⁣</span></a>
-                    <a href="btn btn-link"><i class="fab fa-youtube"></i> <span class="social-text">DINAMIKA PKN STAN⁣⁣⁣</span></a>
+                    <a href="https://www.instagram.com/dinamikapknstan/" target="_blank" class="btn btn-link"><i class="fab fa-instagram"></i> <span class="social-text">@dinamikapknstan</span></a>
+                    <a href="https://twitter.com/dinamikapknstan" target="_blank" class="btn btn-link"><i class="fab fa-twitter"></i> <span class="social-text">@dinamikapknstan</span></a>
+                    <a href="https://www.tiktok.com/@dinamikapknstan?" target="_blank" class="btn btn-link"><i class="fab fa-tiktok"></i> <span class="social-text">@dinamikapknstan</span></a>
+                    <a href="https://t.me/dinamika_pknstan" target="_blank" class="btn btn-link"><i class="fab fa-telegram-plane"></i> <span class="social-text">dinamika_pknstan⁣⁣⁣</span></a>
+                    <a href="https://www.youtube.com/channel/UCwnvTYRjfVs6oN1hu01C2iw" target="_blank" class="btn btn-link"><i class="fab fa-youtube"></i> <span class="social-text">DINAMIKA PKN STAN⁣⁣⁣</span></a>
                 </div>
             </div>
         </div>
 
         <div class="row footer">
             <div class="col-lg-12">
-                <div class="d-flex justify-content-center align-items-center pb-2">
+                <div class="d-flex justify-content-center align-items-center pb-4">
                     <small style="color: #FFFFAA">
-                        Dinamika x Staner.id 2021
+                        Copyright &copy; Dinamika x Staner.id 2021
                     </small>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="modal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Checkpoint #1</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="glass-container p-2">
-                        <code>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor officiis animi dolore asperiores mollitia placeat corporis debitis itaque molestias, iusto facere atque? Perferendis consequuntur in voluptates amet. Accusamus, laboriosam magni.
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor officiis animi dolore asperiores mollitia placeat corporis debitis itaque molestias, iusto facere atque? Perferendis consequuntur in voluptates amet. Accusamus, laboriosam magni.
-                        </code>
-                    </div>
                 </div>
             </div>
         </div>

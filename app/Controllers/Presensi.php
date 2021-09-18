@@ -46,7 +46,7 @@ class Presensi extends BaseController
             $query = $this->db->table('data_presensi')->insert($data);
         }
 
-        return redirect()->to(base_url('portal'));
+        return redirect()->to(base_url('portal/acara'));
     }
 }
 

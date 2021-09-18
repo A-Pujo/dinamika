@@ -5,7 +5,7 @@ function logged_in(){
 }
 
 function user(){
-    if(!logged_in()){
+    if(! session()->has('no_reg')){
         return redirect()->to(base_url('akun/login'));
     }
     $db = \Config\Database::connect();
